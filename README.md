@@ -11,8 +11,7 @@ The aims of pure PHP5 templates are:
 5.  [Blocks within Blocks][5]
 6.  [Returning Template Content][6]
 7.  [How It Works][7]
-8.  [Alternatives][8]
-9.  [Support][9]
+8.  [Support][8]
 
 <a name="1">
 ## Basic Example
@@ -378,7 +377,7 @@ If we look at this in this example we would see:
 *   1:Simple_Block with name "content" with an array of children (In this case containing 1 item with the HTML between the start and end)
 *   2:Section Of HTML('```</div>.....</html>```') When the child overwrites sections of the parents it simply removes the simple block (in this case "content") from the parent and inserts the simple_block from the child.
 
-<a name="9">
+<a name="8">
 ##  Support
 </a> 
 
@@ -400,5 +399,4 @@ As I keep having to look this up myself, adding the below to you PHP script will
  [6]: #6
  [7]: #7
  [8]: #8
- [9]: #9
  [10]: http://www.php.net/manual/en/ref.outcontrol.php
