@@ -383,13 +383,20 @@ If we look at this in this example we would see:
 
 ### No Output/Blank Screen
 
-This is the most common issue I've come across. This is normally always caused by the template having either a PHP error or a exception during execution. This means that the output is never displayed from the output buffer. If you've got logging to file turned on then if you have a look in this log your find the error. 
-  
-As I keep having to look this up myself, adding the below to you PHP script will output errors to a file.   
+This is the most common issue I've come across. This is normally always caused by the template having either a PHP error or a exception during execution. This means that the output is never displayed from the output buffer. 
+
+I've included a function ob_shutdown() which ends all the output buffers and pushes the result to screen. If you register it as shutdown function on an exception it will push the content of the output buffers to screen.
+
+```
+    register_shutdown_function('ob_shutdown');
+```
+
+If this isn't right for you or just doesn't work you can always turn logging on to file. Adding the below to your PHP script will output errors to a file.   
 ```
     ini_set('log_errors',true);
     ini_set('error_log','error_log.txt');
 ```                  
+
 
  [1]: #1
  [2]: #2
